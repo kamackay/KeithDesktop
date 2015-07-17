@@ -23,7 +23,7 @@ namespace KeithDesktop
 
         private void Controller_Load(object sender, EventArgs e)
         {
-            ActionButton ab = new ActionButton();
+            ActionButton ab = new ActionButton(Chrome);
             ab.Show();
             children.Add(ab);
             this.MouseEnter += delegate(object a, EventArgs b) { this.TurnRed(); };
@@ -51,5 +51,6 @@ namespace KeithDesktop
             }
             else { i = 0; }
         }
+        public void Chrome() { }
     }
 }

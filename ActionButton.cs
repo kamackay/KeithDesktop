@@ -13,7 +13,7 @@ namespace KeithDesktop
     public partial class ActionButton : Form
     {
         private Label right, left, top, bottom;
-        public ActionButton()
+        public ActionButton(Action act)
         {
             InitializeComponent();
             this.right = new Label();
@@ -21,6 +21,7 @@ namespace KeithDesktop
             this.top = new Label();
             this.bottom = new Label();
             this.Controls.AddRange(new Control[] { right, left, top, bottom });
+            this.Click += delegate(object a, EventArgs b) { act(); };
         }
         private void ControlBorder()
         {
